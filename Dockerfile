@@ -10,6 +10,10 @@ RUN git clone https://github.com/beancount/fava
 
 RUN apt-get update
 RUN apt-get install -y python3-babel
+RUN apt-get install -y locales locales-all
+ENV LC_ALL de_DE.UTF-8
+ENV LANG de_DE.UTF-8
+ENV LANGUAGE de_DE.UTF-8
 
 WORKDIR /tmp/build/fava
 RUN git checkout ${FAVA_VERSION}
